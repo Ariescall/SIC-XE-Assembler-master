@@ -10,24 +10,24 @@ SIC-annotation
 
 using namespace std;
 
-typedef struct{
+typedef struct{//typedef struct 固定用法，用來定義struct(結構) 
     string op,address,obcode,loc,label,parameter,x;
     int siz;
-}instruction;
+}instruction;//instruction裡存放多種資料型態  
 
 vector<instruction> line;
-bool isop(string);
+bool isop(string);//判斷是否為以下指令 
 string optab(string);
-string ten_to_hex(int);
-int hex_to_ten(string);
-string binary_to_hex(const string);
-string hex_to_binary(const string);
+string ten_to_hex(int);//10轉16 
+int hex_to_ten(string);//16轉10 
+string binary_to_hex(const string);//2轉16 
+string hex_to_binary(const string);//16轉2 
 string ASCII(char);
 void pass1();
 void pass2();
 void printob();
 void printre();
-string hex_to_op(string);
+//string hex_to_op(string);//多寫的無意 
 
 int main()
 {
@@ -43,11 +43,11 @@ int main()
 
 void pass1()
 {
-    ifstream file;
-    instruction temp;
-    string lip;
-    int loc_num=0,end_count=0;
-    file.open("test.txt",ios::in);
+    ifstream file;//用fstream函式庫用來讀寫檔案 
+    instruction temp;//instruction是一個物件，temp為它的名稱 
+    string lip;//用來存取一筆String 
+    int loc_num=0,end_count=0;//
+    file.open("test.txt",ios::in);//?打開txt檔，讀入檔案(ios::in)in=讀入檔案 
 
 
     while(end_count!=1)
